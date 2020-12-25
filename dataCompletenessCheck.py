@@ -64,3 +64,4 @@ print("Maximum Altitude: {}".format(max(data['Alt'])))
 
 #data = data[0 : np.where(data['Alt']== data['Alt'].max())[0][0]+1]
     
+msno.matrix(data)
