@@ -9,6 +9,7 @@ Created on Wed Dec 23 20:59:04 2020
 import pandas as pd
 import numpy as np
 import missingno as msno
+import matplotlib as plt
 
 import os
 from io import StringIO
@@ -62,6 +63,8 @@ data = data.where(data < 999999, np.nan)
 
 print("Maximum Altitude: {}".format(max(data['Alt'])))
 
-#data = data[0 : np.where(data['Alt']== data['Alt'].max())[0][0]+1]
-    
-msno.matrix(data)
+data = data[0 : np.where(data['Alt']== data['Alt'].max())[0][0]+1]
+  
+vis = msno.matrix(data, inline=False)
+vis.title("Data Completeness")
+#vis.title("Data Completeness")
